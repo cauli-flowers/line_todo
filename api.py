@@ -14,7 +14,12 @@ USER_ID = config.get('line', 'user_id')
 
 create_table()
 
-db = peewee.SqliteDatabase('todo.db')
+db = peewee.PostgresqlDatabase(
+    config.get('postgres', 'database'),
+    user=config.get('postgres', 'user'),
+    password=config.get('postgres', 'password'),
+    host=config.get('postgres', 'host'),
+)
 
 
 class Todo(peewee.Model):
