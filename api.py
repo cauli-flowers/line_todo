@@ -38,6 +38,11 @@ api = Flask(__name__)
 line_bot_api = LineBotApi(ACCESS_TOKEN)
 
 
+@api.route('/', methods=['GET'])
+def hello_world():
+    return 'hello world'
+
+
 @api.route('/todo', methods=['GET'])
 def get_todo():
     try:
