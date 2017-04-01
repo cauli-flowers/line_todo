@@ -29,7 +29,6 @@ def create_table():
     if Todo.table_exists():
         None
     else:
-        Todo.drop_table()
         Todo.create_table()
 
         Todo.create(
